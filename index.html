@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAMAICA 2026: Cousins On The Loose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --night: #0d0d11;
+            --charcoal: #16171d;
+            --gold: #f2bf39;
+            --amber: #ff8f1f;
+            --sunset: #d9481c;
+            --lagoon: #32b7c9;
+            --palm: #29603b;
+            --cream: #f7e7bb;
+            --text: #f5efdf;
+            --muted: #cbbd9c;
+            --card: rgba(19, 20, 27, 0.82);
+            --card-soft: rgba(35, 24, 16, 0.72);
+            --shadow: 0 28px 64px rgba(0, 0, 0, 0.42);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Manrope', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 12% 14%, rgba(242, 191, 57, 0.22), transparent 22%),
+                radial-gradient(circle at 80% 18%, rgba(50, 183, 201, 0.18), transparent 24%),
+                radial-gradient(circle at 52% 110%, rgba(217, 72, 28, 0.16), transparent 28%),
+                linear-gradient(180deg, #121216 0%, #1b140f 38%, #0f1015 100%);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at center, rgba(255, 210, 92, 0.05), transparent 56%),
+                linear-gradient(transparent 0%, rgba(255, 183, 77, 0.03) 100%);
+            opacity: 1;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            padding: 18px 20px 18px;
+            overflow: hidden;
+            background:
+                linear-gradient(180deg, rgba(11, 10, 13, 0.08), rgba(11, 10, 13, 0.8)),
+                url('https://lh3.googleusercontent.com/d/1X5l_vG2X6jP15e9_H6732Y_wB54F4F3_U') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 42% 34%, rgba(255, 157, 37, 0.3), transparent 18%),
+                linear-gradient(120deg, rgba(0, 0, 0, 0.22), transparent 42%);
+            mix-blend-mode: screen;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 140px;
+            background: linear-gradient(180deg, rgba(15, 16, 21, 0), #101116 82%);
+        }
+
+        .topbar,
+        .hero-panel,
+        main,
+        footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .topbar {
+            max-width: 1180px;
+            margin: 0 auto 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .resort-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(242, 191, 57, 0.35);
+            transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .resort-link:hover {
+            color: var(--gold);
+            border-color: rgba(242, 191, 57, 0.75);
+        }
+
+        .chat-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(47, 175, 99, 0.42);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .chat-link:hover {
+            color: #63d68f;
+            border-color: rgba(99, 214, 143, 0.8);
+        }
+
+        .top-note {
+            color: rgba(247, 231, 187, 0.88);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .hero-panel {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(320px, 430px);
+            gap: 22px;
+            align-items: start;
+        }
+
+        .hero-copy {
+            padding: 0;
+            color: white;
+        }
+
+        .hero-title-row {
+            position: relative;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hero-emblem {
+            position: absolute;
+            left: -215px;
+            top: 62%;
+            transform: translateY(-50%);
+            width: 190px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.36));
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 9px 16px;
+            border-radius: 999px;
+            background: rgba(19, 20, 27, 0.52);
+            border: 1px solid rgba(242, 191, 57, 0.25);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.78rem;
+            font-weight: 800;
+            margin-bottom: 32px;
+            color: var(--cream);
+        }
+
+        h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.3rem, 8vw, 6.3rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            color: var(--gold);
+            text-shadow:
+                0 3px 0 rgba(64, 24, 5, 0.9),
+                0 10px 28px rgba(0, 0, 0, 0.42);
+        }
+
+        .hero-copy p {
+            max-width: 660px;
+            margin: 20px 0 30px;
+            font-size: 1.12rem;
+            line-height: 1.7;
+            color: rgba(247, 231, 187, 0.9);
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+
+        .btn-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            flex: 0 0 auto;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            color: #211305;
+            background: linear-gradient(135deg, var(--gold), var(--amber));
+            box-shadow: 0 18px 35px rgba(242, 191, 57, 0.28);
+        }
+
+        .btn-secondary {
+            color: var(--cream);
+            background: rgba(18, 19, 25, 0.46);
+            border: 1px solid rgba(247, 231, 187, 0.22);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-map {
+            color: #211305;
+            background: linear-gradient(135deg, var(--gold), var(--amber));
+            border: 0;
+            box-shadow: 0 18px 35px rgba(242, 191, 57, 0.28);
+        }
+
+        .hero-card {
+            padding: 26px;
+            border-radius: 28px;
+            background:
+                linear-gradient(180deg, rgba(29, 21, 15, 0.9), rgba(16, 17, 22, 0.92)),
+                radial-gradient(circle at top right, rgba(242, 191, 57, 0.12), transparent 34%);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(242, 191, 57, 0.18);
+        }
+
+        .hero-card h2 {
+            margin: 0 0 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .hero-card p {
+            margin: 0 0 18px;
+            color: rgba(247, 231, 187, 0.8);
+            line-height: 1.7;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .travel-note {
+            margin-top: 18px;
+            padding: 16px 18px 18px;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(50, 183, 201, 0.08));
+            border: 1px solid rgba(242, 191, 57, 0.14);
+        }
+
+        .travel-note strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .travel-note p {
+            margin: 0 0 14px;
+            color: rgba(247, 231, 187, 0.82);
+        }
+
+        .stat {
+            padding: 16px 14px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(242, 191, 57, 0.06));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: rgba(247, 231, 187, 0.58);
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        .stat strong {
+            color: var(--cream);
+            font-size: 1rem;
+        }
+
+        main {
+            max-width: 1180px;
+            margin: -14px auto 0;
+            padding: 0 20px 70px;
+        }
+
+        main::before {
+            content: "";
+            display: block;
+            height: 14px;
+            margin-bottom: 24px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(242, 191, 57, 0.05), rgba(50, 183, 201, 0.28), rgba(242, 191, 57, 0.05));
+            box-shadow: 0 10px 28px rgba(50, 183, 201, 0.12);
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .intro-grid {
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+            margin-bottom: 24px;
+            align-items: start;
+        }
+
+        .side-stack {
+            display: grid;
+            gap: 24px;
+            align-content: start;
+        }
+
+        .section-card {
+            padding: 30px;
+            border-radius: 28px;
+            background:
+                linear-gradient(180deg, rgba(18, 19, 26, 0.92), rgba(26, 18, 12, 0.88)),
+                radial-gradient(circle at top right, rgba(50, 183, 201, 0.08), transparent 28%);
+            border: 1px solid rgba(242, 191, 57, 0.12);
+            box-shadow: var(--shadow);
+        }
+
+        .section-card.dark {
+            background:
+                linear-gradient(155deg, rgba(19, 84, 91, 0.98), rgba(9, 30, 38, 0.98)),
+                radial-gradient(circle at top left, rgba(242, 191, 57, 0.12), transparent 24%);
+            color: white;
+        }
+
+        .section-card h2 {
+            margin: 0 0 14px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .section-card.dark h2,
+        .section-card.dark p,
+        .section-card.dark li {
+            color: white;
+        }
+
+        .section-card p {
+            margin: 0 0 14px;
+            line-height: 1.75;
+            color: rgba(245, 239, 223, 0.8);
+        }
+
+        .quick-list {
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .due-date-banner {
+            display: grid;
+            gap: 8px;
+            margin: 24px 0 4px;
+            padding: 20px 22px;
+            border-radius: 24px;
+            background:
+                linear-gradient(135deg, rgba(242, 191, 57, 0.2), rgba(217, 72, 28, 0.24)),
+                rgba(17, 15, 12, 0.92);
+            border: 1px solid rgba(242, 191, 57, 0.28);
+            box-shadow:
+                0 0 0 1px rgba(255, 143, 31, 0.08),
+                0 18px 34px rgba(0, 0, 0, 0.24);
+        }
+
+        .due-date-label {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.28);
+            color: var(--cream);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .due-date-value {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1;
+            font-weight: 800;
+            color: #fff4c6;
+            text-shadow:
+                0 3px 0 rgba(105, 39, 8, 0.72),
+                0 12px 24px rgba(0, 0, 0, 0.32);
+        }
+
+        .due-date-note {
+            color: rgba(247, 231, 187, 0.86);
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .quick-list li {
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(242, 191, 57, 0.12), rgba(50, 183, 201, 0.08));
+            border: 1px solid rgba(242, 191, 57, 0.12);
+            color: var(--cream);
+            font-weight: 700;
+        }
+
+        .countdown {
+            display: grid;
+            gap: 16px;
+            align-content: start;
+        }
+
+        .excursions-card {
+            margin-bottom: 24px;
+            padding: 24px;
+            border-radius: 28px;
+            background:
+                linear-gradient(155deg, rgba(16, 128, 102, 0.96), rgba(8, 61, 53, 0.98)),
+                radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 24%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: var(--shadow);
+        }
+
+        .excursions-head {
+            display: grid;
+            grid-template-columns: 72px minmax(0, 1fr);
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .viator-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            background: #109a78;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.18),
+                0 14px 28px rgba(0, 0, 0, 0.2);
+        }
+
+        .viator-icon svg {
+            width: 42px;
+            height: 42px;
+        }
+
+        .excursions-card h3 {
+            margin: 0 0 4px;
+            font-size: 2rem;
+            line-height: 1.05;
+            color: #ffffff;
+        }
+
+        .excursions-card p {
+            margin: 0 0 14px;
+            color: rgba(255, 255, 255, 0.86);
+            line-height: 1.7;
+        }
+
+        .excursions-note {
+            margin: 0 0 18px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(5, 20, 18, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .excursions-note strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .btn-viator {
+            color: #07372f;
+            background: linear-gradient(135deg, #ffffff, #dff8ef);
+            box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .meet-greet-card {
+            margin-top: 24px;
+            padding: 26px 28px;
+            border-radius: 28px;
+            background:
+                linear-gradient(155deg, rgba(16, 128, 102, 0.96), rgba(8, 61, 53, 0.98)),
+                radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 24%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: var(--shadow);
+        }
+
+        .meet-greet-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .meet-greet-card h2 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .meet-greet-card p {
+            margin: 0 0 16px;
+            color: rgba(245, 239, 223, 0.82);
+            line-height: 1.75;
+        }
+
+        .meet-greet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .meet-greet-item {
+            padding: 16px 18px;
+            border-radius: 20px;
+            background: rgba(5, 20, 18, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .meet-greet-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: rgba(255, 255, 255, 0.58);
+            font-weight: 800;
+        }
+
+        .meet-greet-value {
+            color: var(--cream);
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .contact-item {
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+        }
+
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+        }
+
+        .app-card-head {
+            display: grid;
+            grid-template-columns: 68px minmax(0, 1fr);
+            gap: 16px;
+            align-items: center;
+        }
+
+        .app-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(180deg, #ffffff, #f2f2f2);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.85),
+                0 16px 28px rgba(0, 0, 0, 0.24);
+        }
+
+        .app-icon svg {
+            width: 44px;
+            height: 44px;
+        }
+
+        .app-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 2px;
+            justify-items: center;
+        }
+
+        .countdown-card {
+            padding: 18px 20px;
+            border-radius: 22px;
+            background: rgba(8, 9, 14, 0.22);
+            border: 1px solid rgba(242, 191, 57, 0.16);
+        }
+
+        .countdown-card span {
+            display: block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            opacity: 0.7;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .countdown-card strong {
+            font-size: 1.45rem;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .store-link {
+            display: block;
+            width: min(100%, 250px);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+        }
+
+        .store-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+        }
+
+        .store-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 32px rgba(0, 0, 0, 0.28);
+            opacity: 0.96;
+        }
+
+        .merch {
+            margin-bottom: 24px;
+        }
+
+        .merch-header,
+        .destination-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .kicker {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--amber);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .merch-header p {
+            margin: 0;
+            white-space: nowrap;
+            color: rgba(245, 239, 223, 0.72);
+        }
+
+        .merch-card {
+            display: grid;
+            grid-template-columns: 180px minmax(0, 1fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .merch-thumb {
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(242, 191, 57, 0.18);
+        }
+
+        .merch-copy {
+            display: grid;
+            gap: 10px;
+        }
+
+        .merch-item {
+            padding: 24px;
+            border-radius: 24px;
+            background:
+                linear-gradient(180deg, rgba(17, 17, 22, 0.96), rgba(37, 25, 17, 0.92)),
+                radial-gradient(circle at top right, rgba(255, 143, 31, 0.16), transparent 24%);
+            border: 1px solid rgba(242, 191, 57, 0.12);
+            box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+        }
+
+        .merch-item h3 {
+            margin: 0 0 10px;
+            font-size: 1.3rem;
+            color: var(--gold);
+        }
+
+        .merch-item p {
+            margin: 0 0 18px;
+            color: rgba(245, 239, 223, 0.78);
+            line-height: 1.7;
+        }
+
+        .destination {
+            padding: 32px;
+            border-radius: 32px;
+            background:
+                linear-gradient(145deg, rgba(22, 22, 28, 0.98), rgba(42, 26, 18, 0.92)),
+                radial-gradient(circle at top right, rgba(255, 143, 31, 0.24), transparent 32%);
+            border: 1px solid rgba(242, 191, 57, 0.14);
+            box-shadow: var(--shadow);
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .destination-copy {
+            display: grid;
+            gap: 16px;
+            align-content: start;
+        }
+
+        .destination-copy h2 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: var(--gold);
+        }
+
+        .destination-copy p {
+            margin: 0;
+            line-height: 1.75;
+            color: rgba(245, 239, 223, 0.8);
+        }
+
+        .resort-meta {
+            display: grid;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .meta-chip {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(242, 191, 57, 0.12), rgba(50, 183, 201, 0.12));
+            color: var(--cream);
+            border: 1px solid rgba(242, 191, 57, 0.12);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .map-shell {
+            min-height: 420px;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #1b2024;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+            border: 6px solid rgba(242, 191, 57, 0.18);
+        }
+
+        .map-shell iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            border: 0;
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        .chat-card {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 26px 28px;
+            border-radius: 28px;
+            background:
+                linear-gradient(135deg, rgba(15, 91, 101, 0.98), rgba(16, 18, 26, 0.98)),
+                radial-gradient(circle at top left, rgba(242, 191, 57, 0.14), transparent 22%);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(242, 191, 57, 0.14);
+        }
+
+        .chat-copy h2 {
+            margin: 0 0 8px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+        }
+
+        .chat-copy p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 650px;
+            line-height: 1.75;
+        }
+
+        .btn-chat {
+            color: #211305;
+            background: linear-gradient(135deg, var(--gold), var(--amber));
+            box-shadow: 0 18px 35px rgba(242, 191, 57, 0.28);
+        }
+
+        footer {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px 42px;
+        }
+
+        .footer-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 20px 24px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(15, 16, 21, 0.98), rgba(35, 23, 15, 0.96));
+            color: rgba(247, 231, 187, 0.86);
+            border: 1px solid rgba(242, 191, 57, 0.12);
+        }
+
+        .footer-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        @media (max-width: 920px) {
+            .hero-panel,
+            .intro-grid,
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-bottom: 24px;
+            }
+
+            .topbar {
+                margin-bottom: 24px;
+            }
+
+            .hero-title-row {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .hero-emblem {
+                position: static;
+                transform: none;
+                width: 138px;
+            }
+
+        }
+
+        @media (max-width: 640px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-card,
+            .destination,
+            .hero-card {
+                padding: 22px;
+            }
+
+            .merch-card {
+                grid-template-columns: 1fr;
+            }
+
+            .merch-thumb {
+                max-width: 220px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions,
+            .chat-card,
+            .merch-header,
+            .destination-head,
+            .footer-card,
+            .meet-greet-head {
+                align-items: flex-start;
+            }
+
+            .app-links {
+                grid-template-columns: 1fr;
+            }
+
+            .meet-greet-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-shell,
+            .map-shell iframe {
+                min-height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="topbar">
+            <div class="top-note"><a class="resort-link" href="https://www.princess-hotels.com/en/jamaica/princess-grand-jamaica/" target="_blank">Princess Grand Jamaica</a> • Summer 2026</div>
+        </div>
+
+        <div class="hero-panel">
+            <div class="hero-copy">
+                <div class="eyebrow">Jamaica 2026</div>
+                <div class="hero-title-row">
+                    <img class="hero-emblem" src="file:///C:/Users/teach/OneDrive/Documents/New%20folder/images/ChatGPT%20Image%20Apr%2017,%202026,%2010_31_32%20AM.png" alt="Cousins On The Loose emblem">
+                    <h1>Cousins On<br>The Loose</h1>
+                </div>
+                <p>Sun, ocean, matching merch, and one beautiful resort. This page is the trip home base for everything the family needs before we land in Jamaica.</p>
+                <div class="hero-actions">
+                    <a href="https://groupme.com/join_group/111602966/JYZoMlgd" target="_blank" class="btn btn-primary">Join the Group Chat</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Princess+Grand+Jamaica" target="_blank" class="btn btn-secondary">Open Resort Map</a>
+                </div>
+            </div>
+
+            <aside class="hero-card">
+                <h2>Trip Snapshot</h2>
+                <p>We’re headed to <a class="resort-link" href="https://www.princess-hotels.com/en/jamaica/princess-grand-jamaica/" target="_blank">Princess Grand Jamaica</a> for a family getaway with beach days, resort nights, and easy access to all the trip links in one place.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Destination</span>
+                        <strong><a class="resort-link" href="https://www.princess-hotels.com/en/jamaica/princess-grand-jamaica/" target="_blank">Princess Grand Jamaica</a></strong>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Trip Date</span>
+                        <strong>June 14-20</strong>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Payment Due</span>
+                        <strong>April 30</strong>
+                    </div>
+                </div>
+                <div class="travel-note">
+                    <strong>Jamaica Entry Form</strong>
+                    <p>Everyone traveling should complete the official entry form before arriving in Jamaica so check-in and arrival go smoothly.</p>
+                    <a href="https://www.enterjamaica.gov.jm/" target="_blank" class="btn btn-secondary">Complete Entry Form</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <main>
+        <section class="grid intro-grid">
+            <div class="section-card">
+                <span class="kicker">Trip Details</span>
+                <h2>Our Jamaica escape is officially in motion.</h2>
+                <p>Everything here should feel easy to scan and actually exciting to open. Use this page to keep the family aligned, order merch, jump into the chat, and pull up the resort location without digging through messages.</p>
+                <div class="due-date-banner">
+                    <span class="due-date-label">Final Resort Payment Due</span>
+                    <strong class="due-date-value">April 30</strong>
+                    <div class="due-date-note">Please make sure your balance is paid in full by the deadline so everything stays locked in for the trip.</div>
+                </div>
+                <ul class="quick-list">
+                    <li>Resort stay: <a class="resort-link" href="https://www.princess-hotels.com/en/jamaica/princess-grand-jamaica/" target="_blank">Princess Grand Jamaica</a></li>
+                    <li>Use the <a class="chat-link" href="https://groupme.com/join_group/111602966/JYZoMlgd" target="_blank">GroupMe</a> for updates, questions, and reminders</li>
+                </ul>
+            </div>
+
+            <div class="side-stack">
+            <div class="section-card dark countdown">
+                <div class="countdown-card">
+                    <div class="app-card-head">
+                        <div class="app-icon" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <path d="M28 6C27.2 12.6 27.9 20.1 30.5 27.9C25.7 24.4 21.3 21.9 17.3 20.4C18.2 27.7 20.6 34.3 24.7 40.2C19.8 36.9 15.8 34.9 12.7 34.2C14.2 42 18.6 48.8 25.8 54.5C33.6 49.8 38.9 43.1 41.7 34.3C44.3 26.2 43.9 16.4 40.4 6.2C36.5 9.9 33.4 15.2 31.2 22C30.1 14.6 29.1 9.3 28 6Z" fill="#F6A313"/>
+                                <path d="M16 56.2C21.2 54.7 27.5 53.9 34.9 53.9C41.2 53.9 46.7 54.6 51.4 56.1C51.6 58.8 50.2 60.4 47.2 60.8H20.2C17.3 60.5 15.9 58.9 16 56.2Z" fill="#4352B8"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span>Resort App</span>
+                            <strong>Princess Hotels &amp; Resorts App</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="countdown-card">
+                    <span>Why Download It</span>
+                    <strong>Use it for resort info, check-in help, and trip convenience before you arrive.</strong>
+                </div>
+                <div class="app-links">
+                    <a class="store-link app-store" href="https://apps.apple.com/us/app/princess-hotels-resorts/id6446177684" target="_blank" aria-label="Available on the App Store">
+                        <img src="file:///C:/Users/teach/OneDrive/Documents/New%20folder/images/App%20Store%20Logo%20Vector.svg%20.png" alt="Available on the App Store">
+                    </a>
+                    <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.hoteligy.princess&hl=en-US" target="_blank" aria-label="Get it on Google Play">
+                        <img src="file:///C:/Users/teach/OneDrive/Documents/New%20folder/images/Google%20Play%20Logo%20Vector.svg%20.png" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+
+            <section class="meet-greet-card">
+                <div class="meet-greet-head">
+                    <div>
+                        <span class="kicker" style="color: rgba(255,255,255,0.72);">Family Meetup</span>
+                        <h2>Meet and Greet</h2>
+                    </div>
+                </div>
+                <p>We’ll be getting together before the trip to go over important details, answer questions, and make sure everyone knows what to expect.</p>
+                <div class="meet-greet-grid">
+                    <div class="meet-greet-item">
+                        <span class="meet-greet-label">Date</span>
+                        <div class="meet-greet-value">June 6, 2026</div>
+                    </div>
+                    <div class="meet-greet-item">
+                        <span class="meet-greet-label">Location</span>
+                        <div class="meet-greet-value">To Be Determined</div>
+                    </div>
+                </div>
+            </section>
+
+            </div>
+        </section>
+
+        <section class="excursions-card">
+            <div class="excursions-head">
+                <div class="viator-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <path d="M15 10H31L44 42H31L15 10Z" fill="#ffffff"/>
+                        <circle cx="45" cy="17" r="8" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="kicker" style="color: rgba(255,255,255,0.72);">Excursions</span>
+                    <h3>Book Excursions on Viator</h3>
+                </div>
+            </div>
+            <p>Browse and book Jamaica excursions directly through Viator. This is the easiest place for everyone to check out tours and reserve the activities they want before the trip.</p>
+            <div class="excursions-note">
+                <strong>What you can book</strong>
+                Explore options like catamaran cruises, waterfalls, ATV rides, beach clubs, and other Negril-area activities in one place.
+            </div>
+            <a href="https://www.viator.com/Negril/d433-ttd?pid=P00002811&uid=U00071258&mcid=58086&currency=USD" target="_blank" class="btn btn-viator">Book Excursions on Viator</a>
+        </section>
+
+        <section class="section-card merch">
+            <div class="merch-header">
+                <div>
+                    <span class="kicker">Merch Drop</span>
+                    <h2>Official trip gear</h2>
+                </div>
+            </div>
+
+            <div class="merch-grid">
+                <article class="merch-item">
+                    <div class="merch-card">
+                        <img class="merch-thumb" src="file:///C:/Users/teach/Downloads/Gemini_Generated_Image_jrk8f3jrk8f3jrk8.png" alt="Cousins On The Loose shirt and bucket hat preview">
+                        <div class="merch-copy">
+                            <h3>Trip Merch</h3>
+                            <p>The black trip t-shirt and matching bucket hat use the same order form, so everything is in one place.</p>
+                            <div>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeT3qXB4eo_4ZFMhsU_5qp503KGOCHwJRhocJdb_QIzvhLNiQ/viewform" target="_blank" class="btn btn-primary">Order Shirt + Bucket Hat</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="destination">
+            <div class="destination-head">
+                <div>
+                    <span class="kicker">Destination</span>
+                    <h2><a class="resort-link" href="https://www.princess-hotels.com/en/jamaica/princess-grand-jamaica/" target="_blank">Princess Grand Jamaica</a></h2>
+                </div>
+            </div>
+
+            <div class="destination-grid">
+                <div class="destination-copy">
+                    <p>Princess Grand Jamaica will be the home base for the trip, with the resort map here to help everyone quickly find the location and get familiar with where we’re staying.</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Princess+Grand+Jamaica" target="_blank" class="btn btn-map" style="width: fit-content;">Open Full Google Map</a>
+                </div>
+
+                <div class="map-shell">
+                    <iframe src="https://www.google.com/maps?q=Princess%20Grand%20Jamaica&z=14&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google map for Princess Grand Jamaica"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="chat-card">
+            <div class="chat-copy">
+                <h2>Stay Connected</h2>
+                <p>Join the <a class="chat-link" href="https://groupme.com/join_group/111602966/JYZoMlgd" target="_blank">GroupMe</a> so everyone can stay in the loop on trip updates, reminders, meetup details, and anything important before we leave.</p>
+                <div class="contact-list">
+                    <div class="contact-item">Phone: <a href="tel:9195928685">919-592-8685</a></div>
+                    <div class="contact-item">Email: <a href="mailto:hamms.travelservice@gmail.com">hamms.travelservice@gmail.com</a></div>
+                </div>
+            </div>
+            <a href="https://groupme.com/join_group/111602966/JYZoMlgd" target="_blank" class="btn btn-chat">
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 2C6.48 2 2 5.86 2 10.63c0 2.66 1.42 5.04 3.65 6.61L5.1 22l4.38-2.41c.82.18 1.66.27 2.52.27 5.52 0 10-3.86 10-8.63S17.52 2 12 2Zm-3.85 9.02A1.13 1.13 0 1 1 8.15 8.76a1.13 1.13 0 0 1 0 2.26Zm3.85 0a1.13 1.13 0 1 1 0-2.26 1.13 1.13 0 0 1 0 2.26Zm3.85 0a1.13 1.13 0 1 1 0-2.26 1.13 1.13 0 0 1 0 2.26Z"/>
+                </svg>
+                Join GroupMe Chat
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-card">
+            <p>&copy; 2026 Cousins On The Loose</p>
+            <p><a href="https://groupme.com/join_group/111602966/JYZoMlgd" target="_blank">Need help? Ask in GroupMe.</a></p>
+        </div>
+    </footer>
+</body>
+</html>
