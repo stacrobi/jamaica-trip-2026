@@ -1,0 +1,16 @@
+{
+  "name": "Cousins On The Loose",
+  "short_name": "Cousins",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#121216",
+  "theme_color": "#121216",
+  "icons": [
+    {
+      "src": "images/cousins-home-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
