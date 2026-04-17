@@ -1,15 +1,15 @@
 {
-  "name": "Cousins On The Loose",
-  "short_name": "Cousins",
+  "name": "Jamaica Trip 2026",
+  "short_name": "Jamaica Trip 2026",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#121216",
   "theme_color": "#121216",
   "icons": [
     {
-      "src": "images/cousins-home-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "images/ChatGPT Image Apr 17, 2026, 10_31_32 AM.png",
+      "sizes": "512x896",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
